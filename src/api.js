@@ -16,7 +16,7 @@ const createUserScore = (userScoreData) => {
     method: "POST",
     headers: headers(),
     body: JSON.stringify({user_score: userScoreData})
-  }).then(res => res.json())
+  }).then(res => res.json());
 }
 
 const createUser = (data) => {

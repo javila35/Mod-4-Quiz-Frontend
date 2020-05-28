@@ -15,11 +15,11 @@ class NewQuiz extends Component {
         category: "",
         questions: [
             {   
-                id: "sdg",
+                id: uuid(),
                 question_text:"",
                 answers: [
                     {
-                        id: "rth",
+                        id: uuid(),
                         answer_text: "",
                         correct: false
                     }
