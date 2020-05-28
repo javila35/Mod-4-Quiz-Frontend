@@ -15,11 +15,11 @@ class NewQuiz extends Component {
         category: "",
         questions: [
             {   
-                id: "sdg",
+                id: uuid(),
                 question_text:"",
                 answers: [
                     {
-                        id: "rth",
+                        id: uuid(),
                         answer_text: "",
                         correct: false
                     }
@@ -71,18 +71,22 @@ class NewQuiz extends Component {
                 )
             })
         } else if (e.target.name === "answer") {
+            console.log(e.target)
             let input = e.target.value
             let qid = e.target.className
             let id = e.target.id
             this.setState(prev => {
                 const newQuestions = prev.questions.map((thisQuestion) => {
                     if (thisQuestion.id !== qid) {
+                        console.log("Q ID DID NOT MATCH")
                         return thisQuestion
                     } else {
                         const newAnswers = thisQuestion.answers.map((thisAnswer) => {
                             if (thisAnswer.id !== id) {
+                                console.log("ANSWER ID DID NOT MATCH")
                                 return thisAnswer
                             } else {
+                                console.log(input, "INPUT")
                                 return {...thisAnswer, answer_text: input}
                             }
                         })
